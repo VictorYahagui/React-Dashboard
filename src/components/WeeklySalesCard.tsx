@@ -6,9 +6,10 @@ import { WeeklyGraph } from './WeeklyGraph';
 type WeeklySalesCardProps = {
     weekPercentage: Array<number>;
 }
+type Day = "dom" | "seg" | "ter" | "qua" | "qui" | "sex" | "sab";
 
 export function WeeklySalesCard(props: WeeklySalesCardProps) {
-    const weekDays = [
+    const weekDays: Array<{ day: Day, percentage: number }> = [
         { day: 'dom', percentage: props.weekPercentage[0] },
         { day: 'seg', percentage: props.weekPercentage[1] },
         { day: 'ter', percentage: props.weekPercentage[2] },
@@ -23,7 +24,7 @@ export function WeeklySalesCard(props: WeeklySalesCardProps) {
     const [lowestSale, indexOfMinValue] = props.weekPercentage.reduce(([minValue, indexOfMinValue], currentValue, currentIndex) => currentValue < minValue ? [currentValue, currentIndex] : [minValue, indexOfMinValue], [Infinity, -1]);
 
     const selectTransformDay = (index: number) => {
-        const weekTransform = {
+        const weekTransform: { [key in Day]: () => string } = {
             "dom": () => "domingo",
             "seg": () => "segunda",
             "ter": () => "terça",
