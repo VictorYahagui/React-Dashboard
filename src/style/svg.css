@@ -1,0 +1,15 @@
+svg #graph {
+    stroke-dasharray: 618;
+    stroke-dashoffset: 618;
+    stroke-width: 16;
+    fill: none;
+}
+
+svg #graph:nth-child(1) {
+    stroke-dashoffset: 0;
+}
+
+svg #graph:nth-child(2) {
+    stroke-dashoffset: calc(618 - (613 * var(--percentage))/100);
+    stroke-linecap: round;
+}
