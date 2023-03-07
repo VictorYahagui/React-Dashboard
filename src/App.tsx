@@ -16,7 +16,7 @@ export function App() {
           <ClosedSalesCard percentage={10} />
         </div>
         <div className='lg:col-span-1 w-full flex justify-center items-center'>
-          <MonthlyGoalCard expectedMoneyAmount={100} percentage={20} />
+          <MonthlyGoalCard expectedMoneyAmount={100} percentage={21} />
         </div>
         <div className='lg:col-span-3 w-full flex justify-center items-center'>
           <WeeklySalesCard weekPercentage={[30, 100, 70, 20, 10, 60, 35]} />
